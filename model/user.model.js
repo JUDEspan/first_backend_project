@@ -33,7 +33,7 @@ userSchema.methods.comparedPassword = function (password, callback) {
         if (err) {
             return callback(err);
         }
-        callback( result);
+        callback(null, result);
     });
 };
 
