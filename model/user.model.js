@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt");
-require("dotenv").config()
 let uri = process.env.URI
+require("dotenv").config()
 
 mongoose.connect(uri)
     .then(() => {
@@ -13,7 +13,7 @@ mongoose.connect(uri)
 
 let userSchema = mongoose.Schema({
     firstName: String,
-    lastName: String,
+    lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true }
 });
