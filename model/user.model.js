@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt");
-let uri = "mongodb+srv://judeodede:Dolapo@cluster0.nnn7yhl.mongodb.net/my_project?retryWrites=true&w=majority"
+require("dotenv").config()
+let uri = process.env.URI
 
 mongoose.connect(uri)
     .then(() => {
